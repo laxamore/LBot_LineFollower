@@ -3,9 +3,10 @@ float lastError;
 void PD() {
   error =  sensorError;
   P_Value = kp * error;
+  I_Value += ki * error;
   D_Value = (lastError - error) * kd;
 
-  PD_Value = P_Value + D_Value;
+  PD_Value = P_Value + I_Value + D_Value;
 
   lastError = error;
 }
