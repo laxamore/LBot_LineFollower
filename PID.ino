@@ -1,6 +1,6 @@
 float lastError;
 
-void PD() {
+void PID() {
   error =  sensorError;
   P_Value = kp * error;
   I_Value += ki * error;
